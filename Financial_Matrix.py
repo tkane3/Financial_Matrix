@@ -51,7 +51,7 @@ def generate_graph(principal, annual_contribution, min_rate, max_rate, start_tim
                 zaxis_title='Ending Balance ($)',
                 xaxis=dict(
                     tickmode="array",
-                    tickvals=t,
+                    tickvals=np.arange(start_time, end_time + 1, 5),  # Display every 5 years
                 ),
                 yaxis=dict(
                     tickmode="array",
@@ -81,9 +81,9 @@ def create_gui():
         inputs = [
             ("Principal Starting Balance ($)", "1000"),
             ("Annual Contributions ($)", "500"),
-            ("Minimum Growth Rate (%)", "1"),
+            ("Minimum Growth Rate (%)", "0"),
             ("Maximum Growth Rate (%)", "15"),
-            ("Start Time (years)", "1"),
+            ("Start Time (years)", "0"),
             ("End Time (years)", "30"),
         ]
 
